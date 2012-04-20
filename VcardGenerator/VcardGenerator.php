@@ -7,7 +7,8 @@ class VcardGenerator
     public function generateVcard(Array $fields)
     {
         $vcard = $this->transformFields($fields);
-        return $vcard;
+
+        return str_replace('\n', "\n", $vcard);
     }
 
     private function transformFields($fields)
@@ -15,7 +16,7 @@ class VcardGenerator
         // fields to content
         $content = '';
         foreach ($fields as $key => $value) {
-            $content .= $key . ':' . $value;
+            $content .= $key . ':' . $value . '\n';
         }
 
         $vcard = $this->insertContent($content);
@@ -24,10 +25,10 @@ class VcardGenerator
 
     private function insertContent($content)
     {
-        $vcardContent = 'BEGIN:VCARD';
-        $vcardContent .= 'VERSION:3.0';
+        $vcardContent = 'BEGIN:VCARD\n';
+        $vcardContent .= 'VERSION:2.1\n';
         $vcardContent .= $content;
-        $vcardContent .= 'END:VCARD';
+        $vcardContent .= 'END:VCARD\n';
 
         return $vcardContent;
     }
