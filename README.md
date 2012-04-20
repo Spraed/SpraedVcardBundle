@@ -1,2 +1,2 @@
-SpreadVcardBundle
+SpraedVcardBundle
 =================
