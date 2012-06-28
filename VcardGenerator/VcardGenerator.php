@@ -16,7 +16,7 @@ class VcardGenerator
         // fields to content
         $content = '';
         foreach ($fields as $key => $value) {
-            $content .= $key . ':' . $value . '\n';
+            $content .= $key . ':' . utf8_decode($value) . '\n';
         }
 
         $vcard = $this->insertContent($content);
