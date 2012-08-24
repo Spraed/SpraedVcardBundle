@@ -1,0 +1,31 @@
+{
+    "name":        "spraed/vcard-bundle",
+    "type":        "symfony-bundle",
+    "description": "This bundle allows vcard v2.1 export",
+    "keywords":    ["spraed", "vcard", "bundle"],
+    "homepage":    "https://github.com/Spraed/SpraedVcardBundle",
+    "license":     "MIT",
+
+    "authors": [
+        {
+            "name": "Spraed Team",
+            "homepage": "http://spraed.com"
+        },
+        {
+            "name": "Symfony Community"
+        }
+    ],
+
+    "require": {
+        "php":                      ">=5.3.2",
+        "symfony/framework-bundle": ">=2.0.0"
+    },
+
+    "autoload": {
+        "psr-0": {
+            "Spraed\\VcardBundle": ""
+        }
+    },
+
+    "target-dir": "Spraed/VcardBundle"
+}
